@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+# MySQL properties
+db.driver=com.mysql.cj.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/PP_DB_2_3_1
+db.Username=root
+db.password=666manamA!
 
-  <bean id="testBean"
-        class="alishev.spring.demo.TestBean">
-    <constructor-arg value="Belya"/>
-  </bean>
+# Hibernate properties
+hibernate.show_sql=true
+hibernate.hbm2ddl.auto=update
 
-</beans>
