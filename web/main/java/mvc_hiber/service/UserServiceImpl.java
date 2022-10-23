@@ -1,9 +1,9 @@
-package service;
+package mvc_hiber.service;
 
-
-import dao.UserDAO;
-import model.User;
+import mvc_hiber.dao.UserDAO;
+import mvc_hiber.model.User;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,28 +18,34 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    @Transactional
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
     }
 
     @Override
-    public User getUserById(long id) {
-        return userDAO.getUserById(id);
-    }
-
-    @Override
+    @Transactional
     public void addUser(User user) {
         userDAO.addUser(user);
     }
 
     @Override
-    public void removeUser(long id) {
-        userDAO.removeUser(id);
+    @Transactional
+    public void updateUser(User user) {
+
     }
 
     @Override
-    public void updateUser(User user) {
-        userDAO.updateUser(user);
+    @Transactional
+    public User getUser(Long id) {
+        return userDAO.getUser(id);
     }
+    @Override
+    @Transactional
+    public void removeUser(Long id) {
+
+    }
+
+
 
 }
