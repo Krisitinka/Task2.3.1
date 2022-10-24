@@ -51,7 +51,7 @@ public class HiberConfig {
    public LocalContainerEntityManagerFactoryBean getEntityManagerFactory() {
       LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
       em.setDataSource(getDataSource());
-      em.setPackagesToScan("java");
+      em.setPackagesToScan("mvc_hiber");
 
       Properties properties = new Properties();
       properties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));

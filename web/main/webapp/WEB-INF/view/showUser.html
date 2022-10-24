@@ -10,6 +10,7 @@
 <h3 th:text="${user.getLastName()}"></h3>
 <h3 th:text="${user.getAge()}"></h3>
 
+
 <a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a>
 
 <form th:method="DELETE" th:action="@{{id}(id=${user.getId()})}">

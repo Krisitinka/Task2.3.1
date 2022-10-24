@@ -1,8 +1,6 @@
 package mvc_hiber.model;
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -10,20 +8,15 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "name")
-    @NotEmpty(message = "Name should not be empty")
-    @Size(min = 2, max = 30, message = "Name should be between 2 nad 30")
     private String name;
 
     @Column(name = "lastName")
-    @NotEmpty(message = "Last name should not be empty")
-    @Size(min = 2, max = 30, message = "Last name should be between 2 nad 30")
     private String lastName;
 
     @Column(name = "age")
-    @Min(value = 1, message = "Age should be greater than 1")
     private int age;
 
     public User() {
@@ -33,10 +26,6 @@ public class User {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
-    }
-
-    public User(int i, String tom) {
-
     }
 
     public String getName() {
@@ -63,11 +52,11 @@ public class User {
         this.age = age;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

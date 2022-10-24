@@ -6,7 +6,6 @@
         <webroots>
           <root url="file://$MODULE_DIR$/web/main/webapp" relative="/" />
         </webroots>
-        <sourceRoots />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">

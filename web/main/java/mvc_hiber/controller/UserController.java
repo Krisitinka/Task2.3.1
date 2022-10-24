@@ -32,15 +32,16 @@ public class UserController {
         return "newUser";
     }
 
-    @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable("id") Long id) {
-        userService.removeUser(id);
+    @DeleteMapping("/")
+    public String deleteUser(@RequestParam("id") Long id) {
+        userService.deleteUser(id);
         return "redirect:/";
     }
 
+
     @GetMapping("{id}/edit")
     public String updateUser(@PathVariable("id") Long id, Model model) {
-        model.addAttribute(userService.getUser(id));
+        model.addAttribute("user", userService.getUser(id));
         return "editUser";
     }
     @PostMapping()
